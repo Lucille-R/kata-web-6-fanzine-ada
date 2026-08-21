@@ -291,4 +291,10 @@ textarea::placeholder {
 
 
 /* ─── BONUS B — Le trait sous les titres ─────────────────── */
-
+.titre-section::after {
+  display: block;
+  content: "";
+  background-color: var(--rouge);
+  width: 100%; /* Je trouve qu'un largeur en % est plus jolie qu'en "fixe" ;-) */
+  height: 5px;
+}
