@@ -214,7 +214,31 @@ a:hover { color: var(--rouge); }
 
 /* ─── DÉFI 3 — Les étapes numérotées ─────────────────────── */
 
+/* J'initialise mon compteur à 0, sur la class="etapes" */
+.etapes {
+  counter-reset: count 0; /* Je nomme mon compteur 'count' */
+}
 
+/* L'incrémentation de la liste sera de +1 */
+.etapes li {
+  counter-increment: count 1;
+}
+
+/* J'applique le style sur les puces créées */
+.etapes li::before {
+  content: counter(count);
+  position: absolute;
+  left: 0;
+  top: 0.25rem;
+  background-color: var(--rouge);
+  color: var(--creme);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 100%;
+}
 
 /* ─── DÉFI 4 — La signature de la citation ───────────────── */
 
