@@ -250,7 +250,19 @@ a:hover { color: var(--rouge); }
 
 
 /* ─── DÉFI 5 — L'étiquette des encadrés ──────────────────── */
-
+.encadre::before {
+  content: attr(data-label);
+  position: absolute;
+  top: -0.8rem;
+  background-color: var(--violet);
+  padding: 2px 5px;
+  color: var(--blanc);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+.encadre.attention::before {
+  background-color: var(--rouge);
+}
 
 
 /* ─── DÉFI 6 — Les finitions du formulaire ───────────────── */
