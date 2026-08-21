@@ -192,32 +192,109 @@ a:hover { color: var(--rouge); }
 
 
 /* ─── DÉFI 1 — L'ouverture de l'édito ────────────────────── */
+.chapo::first-letter {
+  font-size: 4rem;
+  color: var(--rouge);
+  float: left;
+  line-height: 3.5rem;
+}
 
+.chapo::first-line {
+  font-variant: small-caps;
+}
 
 
 /* ─── DÉFI 2 — Les puces du sommaire ─────────────────────── */
-
+.sommaire li::marker {
+  content : "→";
+  color : var(--violet);
+  font-size: 1.5rem;
+}
 
 
 /* ─── DÉFI 3 — Les étapes numérotées ─────────────────────── */
 
+/* J'initialise mon compteur à 0, sur la class="etapes" */
+.etapes {
+  counter-reset: count 0; /* Je nomme mon compteur 'count' */
+}
 
+/* L'incrémentation de la liste sera de +1 */
+.etapes li {
+  counter-increment: count 1;
+}
+
+/* J'applique le style sur les puces créées */
+.etapes li::before {
+  content: counter(count);
+  position: absolute;
+  left: 0;
+  top: 0.25rem;
+  background-color: var(--rouge);
+  color: var(--creme);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 100%;
+}
 
 /* ─── DÉFI 4 — La signature de la citation ───────────────── */
-
+.citation::after {
+  display: block;
+  content: "— " attr(data-auteure);
+  color: var(--gris);
+  font-size: 1rem;
+}
 
 
 /* ─── DÉFI 5 — L'étiquette des encadrés ──────────────────── */
-
+.encadre::before {
+  content: attr(data-label);
+  position: absolute;
+  top: -0.8rem;
+  background-color: var(--violet);
+  padding: 2px 5px;
+  color: var(--blanc);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+.encadre.attention::before {
+  background-color: var(--rouge);
+}
 
 
 /* ─── DÉFI 6 — Les finitions du formulaire ───────────────── */
+/* Texte des champs du formulaire */
+input::placeholder {
+  color: rgb(184, 183, 183);
+  font-style: italic;
+}
+textarea::placeholder {
+  color: rgb(184, 183, 183);
+  font-style: italic;
+}
 
-
+/* Champs obligatoires */
+.requis::after {
+  content: " *";
+  color: var(--rouge);
+}
 
 /* ─── BONUS A — Les liens externes ───────────────────────── */
-
+.lien-externe::after {
+  content: " ↗ (" attr(href) ")";
+  color: grey;
+  font-size: small;
+}
 
 
 /* ─── BONUS B — Le trait sous les titres ─────────────────── */
-
+.titre-section::after {
+  display: block;
+  content: "";
+  background-color: var(--rouge);
+  width: 100%; /* Je trouve qu'un largeur en % est plus jolie qu'en "fixe" ;-) */
+  height: 5px;
+}
