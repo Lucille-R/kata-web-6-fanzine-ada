@@ -283,7 +283,11 @@ textarea::placeholder {
 }
 
 /* ─── BONUS A — Les liens externes ───────────────────────── */
-
+.lien-externe::after {
+  content: " ↗ (" attr(href) ")";
+  color: grey;
+  font-size: small;
+}
 
 
 /* ─── BONUS B — Le trait sous les titres ─────────────────── */
