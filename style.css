@@ -266,8 +266,21 @@ a:hover { color: var(--rouge); }
 
 
 /* ─── DÉFI 6 — Les finitions du formulaire ───────────────── */
+/* Texte des champs du formulaire */
+input::placeholder {
+  color: rgb(184, 183, 183);
+  font-style: italic;
+}
+textarea::placeholder {
+  color: rgb(184, 183, 183);
+  font-style: italic;
+}
 
-
+/* Champs obligatoires */
+.requis::after {
+  content: " *";
+  color: var(--rouge);
+}
 
 /* ─── BONUS A — Les liens externes ───────────────────────── */
 
