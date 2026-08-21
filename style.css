@@ -241,7 +241,12 @@ a:hover { color: var(--rouge); }
 }
 
 /* ─── DÉFI 4 — La signature de la citation ───────────────── */
-
+.citation::after {
+  display: block;
+  content: "— " attr(data-auteure);
+  color: var(--gris);
+  font-size: 1rem;
+}
 
 
 /* ─── DÉFI 5 — L'étiquette des encadrés ──────────────────── */
