@@ -205,7 +205,11 @@ a:hover { color: var(--rouge); }
 
 
 /* ─── DÉFI 2 — Les puces du sommaire ─────────────────────── */
-
+.sommaire li::marker {
+  content : "→";
+  color : var(--violet);
+  font-size: 1.5rem;
+}
 
 
 /* ─── DÉFI 3 — Les étapes numérotées ─────────────────────── */
